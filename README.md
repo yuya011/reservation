@@ -17,99 +17,99 @@
 ・リアルタイム更新: データベース（Firebase）と連携しており、誰かが新しい予約を追加したり、既存の予約を削除したりすると、表示が自動的に更新されます。  
   
 ### カレンダー形式での月間表示
-・トップページの「次の予約」セクションをクリックすると、月間カレンダーが表示されます。
-・カレンダー上にはその月の全ての予約がマッピングされており、特定の日や週の空き状況を視覚的に確認できます。
-・カレンダー上の予約をクリックすると、詳細の確認や削除が可能です。
+・トップページの「次の予約」セクションをクリックすると、月間カレンダーが表示されます。  
+・カレンダー上にはその月の全ての予約がマッピングされており、特定の日や週の空き状況を視覚的に確認できます。  
+・カレンダー上の予約をクリックすると、詳細の確認や削除が可能です。  
 
 ### 簡単な予約フォーム
-・入力履歴の活用: 一度入力した「研究室名」「学籍番号」「氏名」は、お使いのブラウザに自動で保存されます。次回以降はプルダウン形式で候補が表示され、入力の手間を大幅に削減します。
-・直感的な日時選択: 日付はカレンダーUIから、時間は1分単位で直感的に選択できます。
+・入力履歴の活用: 一度入力した「研究室名」「学籍番号」「氏名」は、お使いのブラウザに自動で保存されます。次回以降はプルダウン形式で候補が表示され、入力の手間を大幅に削減します。  
+・直感的な日時選択: 日付はカレンダーUIから、時間は1分単位で直感的に選択できます。  
 
 ### 予約の重複防止機能
-・新しい予約を登録する際、指定した時間帯にすでに他の予約が存在しないかをシステムが自動でチェックします。
-・万が一、予約が重複している場合はエラーメッセージが表示され、ダブルブッキングを未然に防ぎます。
+・新しい予約を登録する際、指定した時間帯にすでに他の予約が存在しないかをシステムが自動でチェックします。  
+・万が一、予約が重複している場合はエラーメッセージが表示され、ダブルブッキングを未然に防ぎます。  
 
 ### データ管理
-・オンラインデータ: 予約データそのものはFirebaseのデータベースに保存されるため、どのデバイスからアクセスしても常に同じ最新の情報を共有できます。
+・オンラインデータ: 予約データそのものはFirebaseのデータベースに保存されるため、どのデバイスからアクセスしても常に同じ最新の情報を共有できます。  
 
 
 
 ## 技術仕様
-・フロントエンド: HTML, JavaScript, Tailwind CSS
-・データベース: Google Firebase (Firestore)
-・認証: Firebase Authentication (匿名認証)
+・フロントエンド: HTML, JavaScript, Tailwind CSS  
+・データベース: Google Firebase (Firestore)  
+・認証: Firebase Authentication (匿名認証)  
 
 
 
 ## 導入の際の注意点
-このアプリはFirebaseを使用します。これは無料ですが、事前の登録とAPIキーの発行が必要です。以下にFirebaseの登録方法を記述します。
+このアプリはFirebaseを使用します。これは無料ですが、事前の登録とAPIキーの発行が必要です。以下にFirebaseの登録方法を記述します。  
 
 ### ステップ1：Firebaseプロジェクトを作成する
-1 Firebaseコンソールにログインします。 
-2 「プロジェクトを作成」をクリックします。
-3 プロジェクト名を入力します（例：「研究室予約システム」など、分かりやすい名前）。入力後、「続行」をクリックします。
-4 「このプロジェクトで Google アナリティクスを有効にする」は、今はオフにして大丈夫です。「プロジェクトを作成」をクリックします。
+1 Firebaseコンソールにログインします。   
+2 「プロジェクトを作成」をクリックします。  
+3 プロジェクト名を入力します（例：「研究室予約システム」など、分かりやすい名前）。入力後、「続行」をクリックします。  
+4 「このプロジェクトで Google アナリティクスを有効にする」は、今はオフにして大丈夫です。「プロジェクトを作成」をクリックします。  
 
 ### ステップ2：ウェブアプリをプロジェクトに追加する
-1 プロジェクトができたら、作成したHTMLコードをそのプロジェクトに接続します。
-2 プロジェクトの概要ページが表示されたら、中央にあるウェブアイコン（ </> ）をクリックして、ウェブアプリを追加します。
-3 「アプリのニックネーム」を入力します（例：「予約ページ」）。
-4 「このアプリのFirebase Hostingも設定します」というチェックボックスは、今はオフのままで大丈夫です。
-5 「アプリを登録」をクリックします。
+1 プロジェクトができたら、作成したHTMLコードをそのプロジェクトに接続します。  
+2 プロジェクトの概要ページが表示されたら、中央にあるウェブアイコン（ </> ）をクリックして、ウェブアプリを追加します。  
+3 「アプリのニックネーム」を入力します（例：「予約ページ」）。  
+4 「このアプリのFirebase Hostingも設定します」というチェックボックスは、今はオフのままで大丈夫です。  
+5 「アプリを登録」をクリックします。  
 
 ### ステップ3：firebaseConfig を取得してコードに貼り付ける
-1 アプリを登録すると、firebaseConfig という、あなたのアプリ専用の「接続キー」が表示されます。
-2 画面に以下のようなコードが表示されます。この const firebaseConfig = { ... }; の部分を全てコピーしてください。
+1 アプリを登録すると、firebaseConfig という、あなたのアプリ専用の「接続キー」が表示されます。  
+2 画面に以下のようなコードが表示されます。この const firebaseConfig = { ... }; の部分を全てコピーしてください。  
 
 JavaScript
 
-// 例：このようなコードが表示されます
-const firebaseConfig = {
-  apiKey: "AIzaSyXXXXXXXXXXXXXXXXXXXXXXXXXXX",
-  authDomain: "your-project-id.firebaseapp.com",
-  projectId: "your-project-id",
-  storageBucket: "your-project-id.appspot.com",
-  messagingSenderId: "123456789012",
-  appId: "1:123456789012:web:xxxxxxxxxxxxxxxxxxxxxx"
-};
+// 例：このようなコードが表示されます  
+const firebaseConfig = {  
+  apiKey: "AIzaSyXXXXXXXXXXXXXXXXXXXXXXXXXXX",  
+  authDomain: "your-project-id.firebaseapp.com",  
+  projectId: "your-project-id",  
+  storageBucket: "your-project-id.appspot.com",  
+  messagingSenderId: "123456789012",  
+  appId: "1:123456789012:web:xxxxxxxxxxxxxxxxxxxxxx"  
+};  
 
 
-3 次に、あなたが持っているlab_reservation_system_v1のHTMLファイルを開きます。
-4 コードの下の方にある <script type="module"> タグ内を探し、以下の行を見つけます。
+3 次に、あなたが持っているlab_reservation_system_v1のHTMLファイルを開きます。  
+4 コードの下の方にある <script type="module"> タグ内を探し、以下の行を見つけます。  
 
-JavaScript
+JavaScript  
 
-const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : { apiKey: "YOUR_API_KEY", authDomain: "YOUR_AUTH_DOMAIN", projectId: "YOUR_PROJECT_ID" };
-この行の { apiKey: "YOUR_API_KEY", ... } の部分を、先ほどコピーしたあなた自身の firebaseConfig の {...} の中身に置き換えます。
+const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : { apiKey: "YOUR_API_KEY", authDomain: "YOUR_AUTH_DOMAIN", projectId: "YOUR_PROJECT_ID" };  
+この行の { apiKey: "YOUR_API_KEY", ... } の部分を、先ほどコピーしたあなた自身の firebaseConfig の {...} の中身に置き換えます。  
 
-修正後の例：
+修正後の例：  
 
-JavaScript
+JavaScript  
 
-const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {
-  apiKey: "AIzaSyXXXXXXXXXXXXXXXXXXXXXXXXXXX",
-  authDomain: "your-project-id.firebaseapp.com",
-  projectId: "your-project-id",
-  storageBucket: "your-project-id.appspot.com",
-  messagingSenderId: "123456789012",
-  appId: "1:123456789012:web:xxxxxxxxxxxxxxxxxxxxxx"
-};
+const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : {  
+  apiKey: "AIzaSyXXXXXXXXXXXXXXXXXXXXXXXXXXX",  
+  authDomain: "your-project-id.firebaseapp.com",  
+  projectId: "your-project-id",  
+  storageBucket: "your-project-id.appspot.com",  
+  messagingSenderId: "123456789012",  
+  appId: "1:123456789012:web:xxxxxxxxxxxxxxxxxxxxxx"  
+};  
 
-5 これで、あなたのHTMLファイルがFirebaseプロジェクトと通信できるようになります。
+5 これで、あなたのHTMLファイルがFirebaseプロジェクトと通信できるようになります。  
 
 ### ステップ4：Firestoreデータベースを有効にする
-1 予約データを保存するためのデータベースを準備します。
-2 Firebaseコンソールの左側のメニューから「ビルド」>「Firestore Database」を選択します。
-3 「データベースの作成」ボタンをクリックします。
-4 「テストモードで開始」を選択し、「次へ」をクリックします。
-5 テストモードにすると、誰でもデータベースの読み書きができてしまいます。まずは動作確認のためにこの設定にしますが、本格的に運用する際はセキュリティルールを見直すことをお勧めします。
-6 ロケーションを選択します。asia-northeast1 (東京) など、近い場所を選ぶと良いでしょう。
-7 「有効にする」をクリックします。データベースが作成されます。
+1 予約データを保存するためのデータベースを準備します。  
+2 Firebaseコンソールの左側のメニューから「ビルド」>「Firestore Database」を選択します。  
+3 「データベースの作成」ボタンをクリックします。  
+4 「テストモードで開始」を選択し、「次へ」をクリックします。  
+5 テストモードにすると、誰でもデータベースの読み書きができてしまいます。まずは動作確認のためにこの設定にしますが、本格的に運用する際はセキュリティルールを見直すことをお勧めします。  
+6 ロケーションを選択します。asia-northeast1 (東京) など、近い場所を選ぶと良いでしょう。  
+7 「有効にする」をクリックします。データベースが作成されます。  
 
 ### ステップ5：匿名認証を有効にする
-1 このアプリは、ユーザーがログインしなくても使えるように「匿名認証」という仕組みを使っています。これを有効にする必要があります。
-2 Firebaseコンソールの左側のメニューから「ビルド」>「Authentication」を選択します。
-3 「始める」ボタンをクリックします。
-4 「Sign-in method」タブをクリックします。
-5 プロバイダのリストから「匿名」をクリックします。
-6 「有効にする」のスイッチをオンにして、「保存」をクリックします。
+1 このアプリは、ユーザーがログインしなくても使えるように「匿名認証」という仕組みを使っています。これを有効にする必要があります。  
+2 Firebaseコンソールの左側のメニューから「ビルド」>「Authentication」を選択します。  
+3 「始める」ボタンをクリックします。  
+4 「Sign-in method」タブをクリックします。  
+5 プロバイダのリストから「匿名」をクリックします。  
+6 「有効にする」のスイッチをオンにして、「保存」をクリックします。　　
