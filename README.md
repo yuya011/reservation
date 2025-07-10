@@ -1,1 +1,3 @@
-# reservation
+# reservation　大学課題用
+
+#これは研究室などの予約の際に使用するシステムです
