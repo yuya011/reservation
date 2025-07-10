@@ -1,4 +1,4 @@
-# これは研究室などの予約の際に使用するシステムです
+# これは研究室などの予約に使用するシステムです
 
 
 
@@ -74,12 +74,17 @@ const firebaseConfig = {
 };  
 
 
-3 次に、あなたが持っているlab_reservation_system_v1のHTMLファイルを開きます。  
+3 次に、ダウンロードしたHTMLファイルを開きます。  
 4 コードの下の方にある <script type="module"> タグ内を探し、以下の行を見つけます。  
 
 JavaScript  
 
-const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : { apiKey: "YOUR_API_KEY", authDomain: "YOUR_AUTH_DOMAIN", projectId: "YOUR_PROJECT_ID" };  
+apiKey: " //ここにAPIキー入力",  
+            authDomain: "//ここにドメイン入力",  
+            projectId: " //ここにプロジェクトID入力 ",   
+            storageBucket: " //ここにストレージバケット入力",  
+            messagingSenderId: " //ここに入力",  
+            appId: " //ここにアップID入力"    
 この行の { apiKey: "YOUR_API_KEY", ... } の部分を、先ほどコピーしたあなた自身の firebaseConfig の {...} の中身に置き換えます。  
 
 修正後の例：  
